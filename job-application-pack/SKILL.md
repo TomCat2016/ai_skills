@@ -81,7 +81,7 @@ Every entry point starts with E.0.
 4. Check for reposts and duplicates against existing applications and `_skipped/` (requisition ID, title, posting date, content).
 5. Record: posting date, vacancy status, pay if stated, required years, location and work-mode rule, languages, company size, and application requirements (exact questions, character limits, file formats; "unknown" if not visible).
 6. Each JD is its own vacancy with its own verdict. Two roles share one folder only if Tom chooses.
-7. Per vacancy: apply the config's hard gates and scoring. A failed hard gate means a skip recommendation unless Tom overrides it. Map each requirement to a master section, labelled direct / transferable / gap. Give a verdict: apply / apply with a stated gap / skip. Label each judgement fact, assumption or suggestion.
+7. Per vacancy: apply the config's hard gates and scoring. A failed hard gate means a skip recommendation unless Tom overrides it. Map each requirement to a master section, labelled direct / transferable / gap. Check the role against Tom's targets (Head or Director of Product, scale-up Chief Product Officer) and challenge poor fits. Give a verdict: apply / apply with a stated gap / skip. Label each judgement fact, assumption or suggestion.
 
 ### E.2 Gate 1 (Tom decides)
 
@@ -94,7 +94,7 @@ DoD (draft complete): CV and agreed extras built; evidence rule checked for ever
 
 ### E.3 Build and check
 
-1. Inputs: the master supplies facts; the JD supplies requirements and emphasis; the main CV supplies the baseline structure and wording; the Project rules supply constraints.
+1. Inputs: the master supplies facts; the JD supplies requirements and emphasis; the main CV supplies the baseline structure and wording; the Project rules supply constraints. Never use facts marked [CONFIRM]. Mirror JD keywords only where true; never stuff keywords.
 2. Draft the CV and agreed extras at v0_1. Header comment: source versions, JD file, changes from the main CV, gaps deliberately not claimed, "DRAFT - not for sending".
 3. In the manifest, map every claim that is new or materially changed from the main CV to its master section, with a scope check.
 4. A fact missing from the master: follow A.4. Never write around it.
