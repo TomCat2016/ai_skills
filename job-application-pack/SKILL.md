@@ -5,7 +5,7 @@ description: Turn a saved job description into a full application pack: fit chec
 
 # Job application pack
 
-Version 0.3 · 25 November 2026 (changelog at the end)
+Version 0.3.1 · 25 November 2026 (changelog at the end)
 
 Use when Tom names a company whose job description (JD) is in `JD_Inbox`, or when he returns to an application in progress (reviewer feedback, approval, "I sent it").
 
@@ -85,7 +85,7 @@ Every entry point starts with E.0.
 
 ### E.2 Gate 1 (Tom decides)
 
-1. Present per vacancy: verdict, requirement map, and for each material gap a proposed treatment (omit / state openly / describe genuinely transferable experience). Propose the extras from the application requirements. State the Definition of Done (DoD) below.
+1. Present per vacancy: verdict, requirement map, and for each material gap a proposed treatment (omit / state openly / describe genuinely transferable experience). Propose the extras from the application requirements. If a note is planned, ask: state the gap in the note, yes or no (default no). State the Definition of Done (DoD) below.
 2. Up to three discretionary questions. Blockers on facts, permissions or data safety are exempt from the limit.
 3. Skip: move the JD files to `_skipped/` with a one-line `<jd-name>-skipped.md` note giving the reason. Stop.
 4. Go: create `Applications/<Company> - <Role>/`, move the JD files in, write the manifest (state: Gate 1 approved). Then work without check-ins until the DoD is met.
@@ -98,7 +98,7 @@ DoD (draft complete): CV and agreed extras built; evidence rule checked for ever
 2. Draft the CV and agreed extras at v0_1. Header comment: source versions, JD file, changes from the main CV, gaps deliberately not claimed, "DRAFT - not for sending".
 3. In the manifest, map every claim that is new or materially changed from the main CV to its master section, with a scope check.
 4. A fact missing from the master: follow A.4. Never write around it.
-5. Portal answers: count characters with code. If the portal's counting method is unknown, flag non-ASCII characters (dashes, curly quotes) as a risk. Never answer personal declarations or eligibility questions by assumption: use master facts or leave them to Tom. A note names the role or track and asks about the remit. It does not list gaps unless the application form asks for them. The Gate 1 gap treatment still applies to the CV.
+5. Portal answers: count characters with code. If the portal's counting method is unknown, flag non-ASCII characters (dashes, curly quotes) as a risk. Never answer personal declarations or eligibility questions by assumption: use master facts or leave them to Tom. A note names the role or track and asks about the remit. It does not list gaps unless the application form asks for them, or Tom chose "state the gap in the note" at Gate 1. The Gate 1 gap treatment still applies to the CV.
 6. Checks, repeated after every revision: hard rules; evidence rule across all artefacts; every figure traces to the master; consistency with LinkedIn and Crux8 collateral (or "unverified"); draft PDF at two pages or fewer, single column, no tables, standard headings, selectable text, no draft comments visible.
 7. Layout and PDF rule:
    1. Render CV and note PDFs from Markdown to HTML with pandoc, then print with headless Google Chrome. Do not use wkhtmltopdf: it shrinks CSS point sizes by about 23%.
@@ -120,7 +120,7 @@ DoD (draft complete): CV and agreed extras built; evidence rule checked for ever
 
 1. Save the feedback to the application folder.
 2. Sort each point: accept / reject / needs Tom's decision, with a one-line reason. Reviewer suggestions are unverified: a new claim passes the evidence rule or is rejected.
-3. Apply accepted points, raise the version, and rerun all E.3.6 checks. List new inconsistencies; do not fix them silently.
+3. Apply accepted points, raise the version, and rerun E.3.6 and E.3.7. List new inconsistencies; do not fix them silently.
 
 ### E.6 Gate 2 and finalise
 
@@ -143,6 +143,7 @@ A short numbered summary: state, files and where they are, review prompt, open d
 
 ## Changelog
 
+- 0.3.1 (25 Nov 2026): reviewer feedback now reruns the layout check (E.3.7); Gate 1 asks whether to state the gap in the note.
 - 0.3 (25 Nov 2026): after the OrgScale run. Added the PDF layout rule, evidence extract for every claim, "unverified, not false" reviewer rule, and no gaps in notes.
 - 0.2 (24 Nov 2026): after an independent ChatGPT review. Added ground rules, file ownership, naming table, manifest and states, entry points, claim-level evidence rule for all artefacts, gap treatment at Gate 1, defined Gate 2 contents, privacy and evidence extract in review prompts, safe mirror sequence. Application files now live only in the folder. Naming changed to hyphens throughout, matching existing Project files.
 - 0.1 (24 Nov 2026): first version.
