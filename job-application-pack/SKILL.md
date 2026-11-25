@@ -5,7 +5,7 @@ description: Turn a saved job description into a full application pack: fit chec
 
 # Job application pack
 
-Version 0.2 · 24 November 2026 (changelog at the end)
+Version 0.3 · 25 November 2026 (changelog at the end)
 
 Use when Tom names a company whose job description (JD) is in `JD_Inbox`, or when he returns to an application in progress (reviewer feedback, approval, "I sent it").
 
@@ -94,20 +94,27 @@ DoD (draft complete): CV and agreed extras built; evidence rule checked for ever
 
 ### E.3 Build and check
 
-1. Inputs: the master supplies facts; the JD supplies requirements and emphasis; the main CV supplies the baseline structure and wording; the Project rules supply constraints. Never use facts marked [CONFIRM]. Mirror JD keywords only where true; never stuff keywords.
+1. Inputs: the master supplies facts; the JD supplies requirements and emphasis; the main CV supplies the baseline structure and wording; the Project rules supply constraints. Never use facts marked [CONFIRM]. Mirror JD keywords only where true; never stuff keywords. The name on the CV and the note signature follow master Section 1, item 1.
 2. Draft the CV and agreed extras at v0_1. Header comment: source versions, JD file, changes from the main CV, gaps deliberately not claimed, "DRAFT - not for sending".
 3. In the manifest, map every claim that is new or materially changed from the main CV to its master section, with a scope check.
 4. A fact missing from the master: follow A.4. Never write around it.
-5. Portal answers: count characters with code. If the portal's counting method is unknown, flag non-ASCII characters (dashes, curly quotes) as a risk. Never answer personal declarations or eligibility questions by assumption: use master facts or leave them to Tom.
+5. Portal answers: count characters with code. If the portal's counting method is unknown, flag non-ASCII characters (dashes, curly quotes) as a risk. Never answer personal declarations or eligibility questions by assumption: use master facts or leave them to Tom. A note names the role or track and asks about the remit. It does not list gaps unless the application form asks for them. The Gate 1 gap treatment still applies to the CV.
 6. Checks, repeated after every revision: hard rules; evidence rule across all artefacts; every figure traces to the master; consistency with LinkedIn and Crux8 collateral (or "unverified"); draft PDF at two pages or fewer, single column, no tables, standard headings, selectable text, no draft comments visible.
+7. Layout and PDF rule:
+   1. Render CV and note PDFs from Markdown to HTML with pandoc, then print with headless Google Chrome. Do not use wkhtmltopdf: it shrinks CSS point sizes by about 23%.
+   2. Use Liberation Sans. Print the CV at about 10 pt and the note at about 12 pt. Match the Setel CV layout: navy headings (`#14233c`), line height about 1.37 (note about 1.65), page margins 12 mm top and bottom, 16 mm left and right.
+   3. Both pages of a two-page CV should be at least 85% full. Never leave page 2 more than half empty, and never leave an orphan heading or bullet at the top of a page.
+   4. Measure the printed size from the finished PDF, for example with `pdftotext -bbox` (word-box height divided by about 1.15). Do not trust the CSS value. Look at the rendered pages as well.
+   5. Keep it ATS-safe: single column, no tables, selectable text.
 
 ### E.4 Review prompt (always)
 
-1. Write the review prompt with the JD, the CV and extras, and an evidence extract: the master passages behind new or changed claims, plus the known gaps. Tell the reviewer not to infer or suggest experience that is not in the extract.
-2. Privacy: remove phone, email and address. Include no master content flagged confidential. Describe forbidden topics generically ("do not suggest adding any former venture, any reason for leaving, or anyone's name").
-3. Ask for numbered findings, each marked fact or opinion, with a severity and a fix. Keep factual verification separate from editorial and fit review.
-4. Add a Gemini prompt only for a top-priority role, or when Claude and ChatGPT disagree on something material; say why.
-5. Tom decides whether to send it. State: draft complete, then under review.
+1. Write the review prompt with the JD, the CV and extras, and an evidence extract: the master passages behind every claim in the CV and extras, not only new or changed ones, plus the known gaps. Tell the reviewer not to infer or suggest experience that is not in the extract.
+2. Tell the reviewer that anything not in the extract is "unverified", not "false", and that it must say which of the two applies to each finding. Reviewer "errors" about unlisted facts then do not trigger needless changes.
+3. Privacy: remove phone, email and address. Include no master content flagged confidential. Describe forbidden topics generically ("do not suggest adding any former venture, any reason for leaving, or anyone's name").
+4. Ask for numbered findings, each marked fact or opinion, with a severity and a fix. Keep factual verification separate from editorial and fit review.
+5. Add a Gemini prompt only for a top-priority role, or when Claude and ChatGPT disagree on something material; say why.
+6. Tom decides whether to send it. State: draft complete, then under review.
 
 ### E.5 Process reviewer feedback
 
@@ -136,5 +143,6 @@ A short numbered summary: state, files and where they are, review prompt, open d
 
 ## Changelog
 
+- 0.3 (25 Nov 2026): after the OrgScale run. Added the PDF layout rule, evidence extract for every claim, "unverified, not false" reviewer rule, and no gaps in notes.
 - 0.2 (24 Nov 2026): after an independent ChatGPT review. Added ground rules, file ownership, naming table, manifest and states, entry points, claim-level evidence rule for all artefacts, gap treatment at Gate 1, defined Gate 2 contents, privacy and evidence extract in review prompts, safe mirror sequence. Application files now live only in the folder. Naming changed to hyphens throughout, matching existing Project files.
 - 0.1 (24 Nov 2026): first version.
